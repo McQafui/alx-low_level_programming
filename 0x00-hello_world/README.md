@@ -7,3 +7,5 @@ compiles a C file but does not link
 2. gcc -S $CFILE
 generates the assembly code of a C code and save it in an output file 
 
+3. gcc $CFILE -o cisfun
+compiles a C file and creates an executable named cisfun
