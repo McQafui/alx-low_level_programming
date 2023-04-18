@@ -6,25 +6,24 @@
  *
  * Return: void
  */
+
 void print_binary(unsigned long int n)
 {
-	int size = sizeof(unsigned long int) * 8;
-	unsigned long int mask = 1;
+	int num, c = 0;
+	unsigned long int current;
 
-	mask <<= (size - 1);
-
-	while (mask)
+	for (num = 63; num >= 0; num--)
 	{
-		if (n & mask)
+		current = n >> num;
+
+		if ((current & 1) == 1)
+		{
 			_putchar('1');
-		else
+			c++;
+		}
+		else if (c != 0)
 			_putchar('0');
-
-		mask >>= 1;
-		size--;
 	}
-
-	if (size == 0)
+	if (c == 0)
 		_putchar('0');
 }
-
