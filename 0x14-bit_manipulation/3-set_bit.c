@@ -7,10 +7,15 @@
  *
  * Return: 1 if it worked, or -1 if an error occurred.
  */
-
 int set_bit(unsigned long int *n, unsigned int index)
 {
-	if (index > sizeof(n) * 8 - 1)
+	if (index >= sizeof(unsigned long int) * 8)
 		return (-1);
-	*n = *n | (1 << index);
+
+	unsigned long int mask = 1;
+	mask <<= index;
+
+	*n = *n | mask;
+
 	return (1);
+}
