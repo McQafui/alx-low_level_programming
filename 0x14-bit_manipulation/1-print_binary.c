@@ -8,24 +8,23 @@
  */
 void print_binary(unsigned long int n)
 {
-	unsigned long int mask = 1;
 	int size = sizeof(unsigned long int) * 8;
-	int flag = 0;
+	unsigned long int mask = 1;
 
 	mask <<= (size - 1);
 
 	while (mask)
 	{
 		if (n & mask)
-		{
 			_putchar('1');
-			flag = 1;
-		}
-		else if (flag || size == 1)
+		else
 			_putchar('0');
 
 		mask >>= 1;
 		size--;
 	}
+
+	if (size == 0)
+		_putchar('0');
 }
 
