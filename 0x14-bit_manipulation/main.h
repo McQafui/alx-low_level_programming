@@ -2,5 +2,7 @@
 #define MAIN_H
 
 unsigned int binary_to_uint(const char *b);
+#include <stddef.h>
+#include <stdio.h>
 
 #endif /*MAIN_H*/
